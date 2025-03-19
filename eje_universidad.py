@@ -26,5 +26,5 @@ def calcular_descuento(estrato, edad, valor_matricula):
 
 valor_final, valor_descuento = calcular_descuento(estrato, edad, valor_matricula)
 
-    print(f"El valor del descuento es: ${valor_descuento:.2f}")
-    print(f"El precio final de la matrícula es: ${valor_final:.2f}")
+print(f"El valor del descuento es: ${valor_descuento:.2f}")
+print(f"El precio final de la matrícula es: ${valor_final:.2f}")
