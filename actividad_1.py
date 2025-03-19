@@ -1,4 +1,4 @@
-temperatura = 65
+temperatura = int(input("ingrese la temperatura del motor:"))
 
 if temperatura <=80:
     print("Encender motor")
