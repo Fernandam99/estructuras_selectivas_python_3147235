@@ -15,10 +15,10 @@ else:
 #ejemplo
 #elaboe un programa en python que determine si una persona es mayor o menor de edad y por tan tanto,habilitada para votar
 
-edad = 21
-documento = False
+edad = int(input("ingrese su edad:"))
+documento = input("Tiene documento? (SI/NO):")
 
-if edad >= 18 and documento==True:
+if edad >= 18 and documento=="SI" :
     print("Usted es mayor de edad")
     print("Puede votar")
 else:
