@@ -51,32 +51,34 @@ contrato = input  ("Ingrese el tipo de contrato:")
 salario_neto = 0
 
 if contrato == "a":
-    print("Eligio: Contrato a termino indefinido")
-    antiguedad = int(input("Ingrese la antigüedad en años: "))
-    grado = int(input("Ingrese el grado o escalafón (1 - 5): "))
-    salario_minimo = int(input("Ingrese el valor del salario mínimo: "))
-
-    salario_base = salario_minimo * 1.5
-
-    print(f"El salario base es: {salario_base}")
-
+    print("Eligió: Contrato a termino indefinido ")
+    antiguedad = int(input("Ingrese antiguedad del empleado(años):"))
+    grado = int(input("Ingrese grado o escalafon(1-5):"))
+    salario_minimo = int(input("Ingrese valor del salario minimo:"))
+    salario_mensual = 0
+    if grado == 1:
+        salario_mensual = salario_minimo * 1.5
+    elif grado == 2:
+        salario_mensual = salario_minimo * 1.7
+    elif grado == 3:
+        salario_mensual = salario_minimo * 2.0
+    elif grado == 4:
+        salario_mensual = salario_minimo * 2.5  
+    elif grado == 5:
+        salario_mensual = salario_minimo * 3.0
+    ##calcular bonificacion
+    bonificacion = 0
     if antiguedad >= 1 and antiguedad <= 5:
-        bonificacion = salario_base * 0.01  
-    elif antiguedad > 5 and antiguedad <= 10:
-        bonificacion = salario_base * 0.02  
-    elif antiguedad > 20:
-        bonificacion = salario_base * 0.03  
-    else:
-        bonificacion = 0
-        print(f"Bonificación por antigüedad: {bonificacion}")
-
-    eps = salario_base * 0.20 
-    pension = salario_base * 0.22  
-    arl = salario_base * 0.001  
-
-    salario_neto = salario_base + bonificacion - eps - pension - arl
-
-    print(f"El salario neto es: {salario_neto}")
+        bonificacion = salario_mensual * 0.01
+    if antiguedad > 5 and antiguedad <= 10:
+        bonificacion = salario_mensual * 0.02
+    if  antiguedad > 10:
+        bonificacion = salario_mensual * 0.03
+    ##descuentos de ley
+    eps = salario_mensual * 0.25
+    pension = salario_mensual * 0.22    
+    arl = salario_mensual * 0.001  
+    salario_neto = salario_mensual - eps - pension - arl + bonificacion
 
 elif contrato == "b":
     print("Eligio: Contrato por prestacion de sericios")
